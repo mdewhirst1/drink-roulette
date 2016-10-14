@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/mdewhirst1/drink-roulette/issues"
   },
-  "homepage": "https://github.com/mdewhirst1/drink-roulette#readme"
+  "homepage": "https://github.com/mdewhirst1/drink-roulette#readme",
+  "dependencies": {
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "express-ejs-layouts": "^2.2.0",
+    "mongoose": "^4.6.1"
+  }
 }
