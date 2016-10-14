@@ -7,7 +7,12 @@ export default class Wheel extends Component{
 
 	render () {
 		return (
-			<h2>{this.props.value}</h2>
+			<div className="wheelsection">
+				<h2>{this.props.value}</h2>
+				<div className="wheel">
+					<p>wheel soon</p>
+				</div>
+			</div>
     )
 	}
 }

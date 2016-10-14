@@ -7,7 +7,7 @@ export default class Nav extends Component{
 			<div>
 				<ul role="nav">
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/play">play</Link></li>
+          <li><Link to="/play">Play</Link></li>
         </ul>
 			</div>
     )

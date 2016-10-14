@@ -4,7 +4,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Router, Route, hashHistory } from 'react-router'
 
-import Home from './components/home.jsx'
+import Home from './components/home/home.jsx'
 import Play from './components/play/play.jsx'
 
 render((
