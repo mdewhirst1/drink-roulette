@@ -9,4 +9,7 @@ router.route('/')
 router.route('/setup')
       .get(rouletteController.setup);
 
+router.route('/play')
+      .get(rouletteController.play);
+
 module.exports = router;
