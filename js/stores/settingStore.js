@@ -22,8 +22,8 @@ let SettingStore =  {
   },
 
   setSettings (key, settings) {
-  	console.log("before update");
-  	console.log(_settings);
+  	// console.log("before update");
+  	// console.log(_settings);
   	_settings[key] = settings;
   	console.log("after update");
   	console.log(_settings);
