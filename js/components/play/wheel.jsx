@@ -6,12 +6,26 @@ export default class Wheel extends Component{
 	}
 
 	render () {
+		let wheel;
+		if (!this.props.mode) {
+			wheel = (
+					<div className="wheel">
+						<p>wheel soon</p>
+					</div>
+				);
+		} else {
+			wheel = (
+					<div className="wheel">
+						<p>wheel soon</p>
+						<p>wheel soon</p>
+						<p>wheel soon</p>
+					</div>
+				);
+		}
 		return (
 			<div className="wheelsection">
 				<h2>{this.props.value}</h2>
-				<div className="wheel">
-					<p>wheel soon</p>
-				</div>
+				{wheel}
 			</div>
     )
 	}

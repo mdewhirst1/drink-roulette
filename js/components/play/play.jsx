@@ -11,8 +11,15 @@ import settingStore from '../../stores/settingStore.js'
 export default class Play extends Component{
 	constructor (props)  {
 		super(props)
+
+		//get the game settings from the store
 		this.state = settingStore.getSettings();
 	}
+
+	handleClick () {
+		console.log("clicked");
+	}
+
 	render () {
 		return (
 			<div>
@@ -20,8 +27,10 @@ export default class Play extends Component{
 				<Nav />
 				<Players players={this.state.players}/>
 				<p>winning score: {this.state.winScore}</p>
-				<Btn value="play" />
-				<Wheel value="wheel coming soon" />
+				<div className="playArea" onClick={this.handleClick}>
+					<Btn value="play" />
+					<Wheel mode={this.state.russianMode} value="wheel coming soon" />
+				</div>
 			</div>
     )
 	}
