@@ -16,10 +16,6 @@ export default class Play extends Component{
 		this.state = settingStore.getSettings();
 	}
 
-	handleClick () {
-		console.log("clicked");
-	}
-
 	render () {
 		return (
 			<div>
@@ -27,10 +23,7 @@ export default class Play extends Component{
 				<Nav />
 				<Players players={this.state.players}/>
 				<p>winning score: {this.state.winScore}</p>
-				<div className="playArea" onClick={this.handleClick}>
-					<Btn value="play" />
-					<Wheel mode={this.state.russianMode} value="wheel coming soon" />
-				</div>
+				<Wheel mode={this.state.russianMode} value="wheel coming soon" />
 			</div>
     )
 	}
