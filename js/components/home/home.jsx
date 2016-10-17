@@ -9,7 +9,7 @@ export default class Home extends Component{
 			<div>
 				<h1>Home</h1>
 				<Nav />
-				<Btn value="play" link="/play" />
+				<Btn value="play" link="/gameSettings" />
 				<Btn value="Add Drink" link="/play" />
 				<Btn value="Create Wheel" link="/play" />
 			</div>
