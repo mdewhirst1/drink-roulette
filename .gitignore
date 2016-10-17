@@ -47,4 +47,4 @@ jspm_packages
 *.tgz
 
 #bundle stuff
-public
+public/js

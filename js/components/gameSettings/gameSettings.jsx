@@ -15,6 +15,10 @@ export default class Play extends Component{
 			<div>
 				<h1>Game settings</h1>
 				<Nav />
+				<label className="switch">
+				  <input type="checkbox" />
+				  <div className="slider" />
+				</label>
 				<button onClick={this.handleButton}>set settings</button>
 				<Btn value="Play" link="/play" />
 			</div>
