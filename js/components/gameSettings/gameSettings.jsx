@@ -20,22 +20,35 @@ export default class Play extends Component{
 		settingStore.setSettings(key, !this.state.key);
 	}
 
+	handleChange (event) {
+		this.setState({
+			winScore: event.target.value
+		});
+		settingStore.setSettings(event.target.id, event.target.value);
+	}
+
 	render () {
 
 		return (
 			<div>
 				<h1>Game settings</h1>
 				<Nav />
-				<div className="endlessSwitch">
-					<p>endless mode: </p>
-					<input id="endlessMode" type="checkbox" onClick={this.handleSwitch.bind(this)} defaultChecked={this.state.endlessMode}/>
+				<div className="settings">
+					<div className="endlessSwitch">
+						<p>endless mode: </p>
+						<input id="endlessMode" type="checkbox" onClick={this.handleSwitch.bind(this)} defaultChecked={this.state.endlessMode}/>
+					</div>
+					<div className="russianSwitch">
+						<p>russian mode: </p>
+						<input id="russianMode" type="checkbox" onClick={this.handleSwitch.bind(this)} defaultChecked={this.state.russianMode}/>
+					</div>
+					<br />
+					<div id="slider">
+						<input type="range" id="winScore" min="0" max="50" value={this.state.winScore} onChange={this.handleChange.bind(this)} />
+						<p id="sliderOutput">{this.state.winScore}</p>
+					</div>
+					<button onClick={this.handleButton}>set settings</button>
 				</div>
-				<div className="russianSwitch">
-					<p>russian mode: </p>
-					<input id="russianMode" type="checkbox" onClick={this.handleSwitch.bind(this)} defaultChecked={this.state.russianMode}/>
-				</div>
-				<br />
-				<button onClick={this.handleButton}>set settings</button>
 				<Btn value="Play" link="/play" />
 			</div>
     )
