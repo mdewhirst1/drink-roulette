@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Wheel extends Component{
+export default class RussianWheel extends Component{
 	constructor (props) {
 		super(props)
 		this.state = {};
@@ -29,6 +29,16 @@ export default class Wheel extends Component{
 				<div className="wheelContainer" ref='wheel' onClick={() => this.setState({spin: true})}>
 					<div className="wheel1">
 						<img src="./wheel.png" className={spin ? 'spin' : ''}/>
+					</div>
+				</div>
+				<div className="wheelContainer" ref='wheel' onClick={() => this.setState({spin: true})}>
+					<div className="wheel2">
+						<img src="./wheel.png" className={spin ? 'spin2' : ''}/>
+					</div>
+				</div>
+				<div className="wheelContainer" ref='wheel' onClick={() => this.setState({spin: true})}>
+					<div className="wheel2">
+						<img src="./wheel.png" className={spin ? 'spin3' : ''}/>
 					</div>
 				</div>
 			</div>

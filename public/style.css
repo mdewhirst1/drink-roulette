@@ -10,3 +10,27 @@
     transform: rotate(3600deg);
   }
 }
+.spin2 {
+  animation: spin2 10s;
+}
+
+@keyframes spin2 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(7200deg);
+  }
+}
+.spin3 {
+  animation: spin3 15s;
+}
+
+@keyframes spin3 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(10800deg);
+  }
+}
