@@ -15,18 +15,31 @@ export default class Play extends Component{
 
 		//get the game settings from the store
 		this.state = settingStore.getSettings();
+		this.state.turnCounter = 0;
 	}
 
 	animationEnd () {
-		console.log("animation ended");
+		//reset turn counter if needed
+		if (this.state.turnCounter >= this.state.players.length) {
+			this.state.turnCounter = 0;
+		}
+
+		//increase player's score
+		this.state.players[this.state.turnCounter].score = this.state.players[this.state.turnCounter].score + 5;
+		this.setState({
+			players: this.state.players
+		});
+
+		//increase turn counter
+		this.state.turnCounter = this.state.turnCounter + 1;
 	}
 
 	render () {
 		var wheel;
 		if (!this.state.russianMode) {
-		  wheel = <Wheel action={this.animationEnd} />;
+		  wheel = <Wheel action={this.animationEnd.bind(this)} />;
 		} else {
-		  wheel = <RussianWheel action={this.animationEnd} />;
+		  wheel = <RussianWheel action={this.animationEnd.bind(this)} />;
 		}
 		return (
 			<div>
