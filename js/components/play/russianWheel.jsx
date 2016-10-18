@@ -37,7 +37,7 @@ export default class RussianWheel extends Component{
 					</div>
 				</div>
 				<div className="wheelContainer" ref='wheel' onClick={() => this.setState({spin: true})}>
-					<div className="wheel2">
+					<div className="wheel3">
 						<img src="./wheel.png" className={spin ? 'spin3' : ''}/>
 					</div>
 				</div>

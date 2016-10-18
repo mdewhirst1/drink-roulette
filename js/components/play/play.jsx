@@ -9,12 +9,20 @@ import Players from './players.jsx';
 
 import settingStore from '../../stores/settingStore.js'
 
+const initialState = settingStore.getSettings();
+
 export default class Play extends Component{
 	constructor (props)  {
 		super(props)
 
 		//get the game settings from the store
-		this.state = settingStore.getSettings();
+		this.state = initialState;
+		this.state.turnCounter = 0;
+	}
+
+	resetGame () {
+		//reset state to initial state;
+		this.setState({initialState});
 		this.state.turnCounter = 0;
 	}
 
@@ -30,18 +38,21 @@ export default class Play extends Component{
 			//reduce drink count
 			this.reduceCount(drinkIndex);
 		}
-
-		//check endgame
-		this.checkEnd();
 	}
 
 	checkEnd () {
-		if (this.state.wheel.drinks.length <= 0) {
-			//out of drinks end the game
-			
-		} else if (this.state.players[this.state.turnCounter - 1].score >= this.state.winScore) {
-			//else check if player has reached winnig score
-
+		let curPlayer = this.state.players[this.state.turnCounter];
+		if (curPlayer.score >= this.state.winScore) {
+			//check if player has reached winnig score
+			alert("Winner: " + curPlayer.name);
+			this.resetGame();
+		} else if (this.state.wheel.drinks.length <= 0) {
+			//check if out of drinks
+			alert("no cards left Winner: " + curPlayer.name);
+			this.resetGame();
+		} else {
+			//update turn counter
+			this.updateTurn();
 		}
 	}
 
@@ -67,9 +78,8 @@ export default class Play extends Component{
 		this.state.wheel.drinks.map((drink, i) => {
 			total = total + drink.count
 		});
-
-		//generate a random number 0 to total drink count -1
-		let rand = Math.floor(Math.random() * total);
+		//generate a random number 1 to total drink count
+		let rand = Math.floor(Math.random() * total) + 1;
 
 		let countSum = 0;
     
@@ -77,7 +87,6 @@ export default class Play extends Component{
     for (var i = 0; i < this.state.wheel.drinks.length; i++) {
   		//sum the drink count
     	countSum += this.state.wheel.drinks[i].count;
-      
       //if rand is less than sum count found selected drink
       if (rand <= countSum) {
       	//break loop and return selected drink
@@ -100,6 +109,11 @@ export default class Play extends Component{
 			players: this.state.players
 		});
 
+		//check endgame
+		this.checkEnd();
+	}
+
+	updateTurn () {
 		//update turn counter
 		this.state.turnCounter = this.state.turnCounter + 1;
 	}

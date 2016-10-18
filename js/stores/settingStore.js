@@ -12,7 +12,7 @@ let _settings = {
 		}
 	],
 	endlessMode: true,
-	russianMode: false,
+	russianMode: true,
 	winScore: 10,
 	wheel: wheelStore.getWheel()
 };
@@ -25,27 +25,7 @@ let SettingStore =  {
 
   setSettings (key, settings) {
   	_settings[key] = settings;
-  },
-
-  resetSettings () {
-  	_settings = {
-			players: [
-				{
-					name: "Jim",
-					score: 0
-				},
-				{
-					name: "Amy",
-					score: 0
-				}
-			],
-			endlessMode: true,
-			russianMode: false,
-			winScore: 10,
-			wheel: wheelStore.getWheel()
-		};
   }
-
 };
 
 module.exports = SettingStore;

@@ -1,3 +1,32 @@
+.wheelContainer {
+  position: relative; top: 0; left: 0;
+}
+
+.wheel1 {
+  position: absolute; top: 0; left: 0;
+}
+
+.wheel2 {
+  position: absolute; top: 100px; left: 100px;
+}
+
+.wheel2 img {
+  transform: rotate(90deg);
+  width: 66%;
+  height: 66%;
+}
+
+.wheel3 {
+  position: absolute; top: 200px; left: 200px;
+}
+
+.wheel3 img {
+  transform: rotate(180deg);
+  width: 33%;
+  height: 33%;
+}
+
+
 .spin {
   animation: spin 5s;
 }
@@ -16,10 +45,10 @@
 
 @keyframes spin2 {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(90deg);
   }
   100% {
-    transform: rotate(-7200deg);
+    transform: rotate(-7110deg);
   }
 }
 .spin3 {
@@ -28,9 +57,9 @@
 
 @keyframes spin3 {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(180deg);
   }
   100% {
-    transform: rotate(10800deg);
+    transform: rotate(10980deg);
   }
 }
