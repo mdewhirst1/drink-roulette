@@ -6,8 +6,13 @@
   position: absolute; top: 0; left: 0;
 }
 
+.wheel1 img {
+  width: 100%;
+  height: 100%;
+}
+
 .wheel2 {
-  position: absolute; top: 100px; left: 100px;
+  position: absolute; top: 102px; left: 102px;
 }
 
 .wheel2 img {
@@ -40,7 +45,7 @@
   }
 }
 .spin2 {
-  animation: spin2 10s;
+  animation: spin2 7s;
 }
 
 @keyframes spin2 {
@@ -52,7 +57,7 @@
   }
 }
 .spin3 {
-  animation: spin3 15s;
+  animation: spin3 9s;
 }
 
 @keyframes spin3 {
