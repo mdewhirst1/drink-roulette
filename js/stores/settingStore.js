@@ -1,3 +1,5 @@
+import wheelStore from './wheelStore.js';
+
 let _settings = {
 	players: [
 		{
@@ -9,10 +11,10 @@ let _settings = {
 			score: 0
 		}
 	],
-	endlessMode: false,
+	endlessMode: true,
 	russianMode: false,
 	winScore: 10,
-	wheel: "coming soon"
+	wheel: wheelStore.getWheel()
 };
 
 let SettingStore =  {
@@ -22,12 +24,27 @@ let SettingStore =  {
   },
 
   setSettings (key, settings) {
-  	// console.log("before update");
-  	// console.log(_settings);
   	_settings[key] = settings;
-  	console.log("after update");
-  	console.log(_settings);
-  } 
+  },
+
+  resetSettings () {
+  	_settings = {
+			players: [
+				{
+					name: "Jim",
+					score: 0
+				},
+				{
+					name: "Amy",
+					score: 0
+				}
+			],
+			endlessMode: true,
+			russianMode: false,
+			winScore: 10,
+			wheel: wheelStore.getWheel()
+		};
+  }
 
 };
 
